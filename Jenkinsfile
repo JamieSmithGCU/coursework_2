@@ -11,7 +11,7 @@ pipeline {
 
 		stage ('Build') {
 			steps {
-				sh label: '', returnStdout: true, script: 'node server.js'
+				sh label: '', returnStdout: true, script: 'safari index.html'
 			}
 		}
 	}
