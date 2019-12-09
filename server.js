@@ -19,8 +19,8 @@ www.listen(8080,function () {
     startTime = new Date();;
     host = process.env.HOSTNAME;
     console.log ("Hello World Started At:",startTime, "| Running On: " ,host, "\n" );
+    process.on('exit', function(code) {
+    	return console.log('About to exit with code ${code}');
+    })
 });
 
-setTimeout((function() {
-	return process.exit(22);
-}), 5000);
