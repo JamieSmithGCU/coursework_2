@@ -3,9 +3,9 @@ pipeline {
 
 	stages {
 
-		stage ('Build') {
+		stage ('SCM Checkout') {
 			steps {
-					sh 'run.sh'
+					checkout([$class: 'GitSCM', branches: [[name: '*/develop']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'd86b76b4-99d0-4fb5-9515-9d87a97f6be7', url: 'https://github.com/JamieSmithGCU/coursework_2']]])
 			}
 		}
 	}
