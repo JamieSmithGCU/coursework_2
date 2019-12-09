@@ -12,17 +12,15 @@ pipeline {
 			}
 		}
 
-		stage ('Testing Stage') {
+		stage('Install dependencies') {
+      		steps {
+        		sh 'npm install'
+      		}
+    	}
 
+		stage ('Test') {
 			steps {
-				
-					sh 'js test'
-			}
-		}
-
-		stage ('Deployment Stage') {
-			steps {
-					sh 'js deploy'
+					sh 'node server.js'
 			}
 		}
 	}
