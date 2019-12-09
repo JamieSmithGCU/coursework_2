@@ -1,7 +1,5 @@
 pipeline {
-	agent any
-
-	tools {nodejs "node"}
+	agent { docker { image 'node:6.3' } }
 
 	stages {
 
@@ -13,7 +11,7 @@ pipeline {
 
 		stage ('Build') {
 			steps {
-			sh label: '', returnStdout: true, script: 'node server.js'
+			sh 'npm server.js'
 			}
 		
 		}
