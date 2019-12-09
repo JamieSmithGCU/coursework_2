@@ -5,7 +5,7 @@ pipeline {
 
 		stage ('Build') {
 			steps {
-					sh 'safari index.html'
+					sh 'run.sh'
 			}
 		}
 	}
