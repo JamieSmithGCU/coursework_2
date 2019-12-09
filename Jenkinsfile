@@ -1,6 +1,8 @@
 pipeline {
 	agent any
 
+	tools {nodejs 'node'}
+
 	stages {
 
 		stage ('SCM Checkout') {
@@ -11,8 +13,7 @@ pipeline {
 
 		stage ('Build') {
 			steps {
-			sh label: '', returnStdout: true, script: '''cd
-safari index.html'''
+			sh label: '', returnStdout: true, script: 'node server.js'
 			}
 		}
 	}
