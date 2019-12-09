@@ -16,6 +16,7 @@ pipeline {
 			nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
                 sh 'node server.js'
 			}
+			}
 		}
 	}
 
