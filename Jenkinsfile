@@ -15,7 +15,7 @@ pipeline {
 			steps {
 			sh label: '', returnStdout: true, script: 'node server.js'
 			}
-			}
+		
 		}
 	}
 
