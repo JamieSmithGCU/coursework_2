@@ -1,30 +1,28 @@
 pipeline {
 	agent any
 
+	tools {nodejs 'node'}
+
 	stages {
 		stage ('Git Stage') {
 
 			steps {
-				withNodeJS(node : 'NodeJS 13.3.0') {
+				
 				sh 'js compile'
-				}
 			}
 		}
 
 		stage ('Testing Stage') {
 
 			steps {
-				withNodeJS(node : 'NodeJS 13.3.0') {
+				
 					sh 'js test'
-				}
 			}
 		}
 
 		stage ('Deployment Stage') {
 			steps {
-				withNodeJS(node : 'NodeJS 13.3.0') {
 					sh 'js deploy'
-				}
 			}
 		}
 	}
