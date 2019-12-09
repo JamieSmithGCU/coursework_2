@@ -11,7 +11,7 @@ pipeline {
 
 		stage ('Build') {
 			steps {
-			sh 'npm server.js'
+			sh 'node server.js'
 			}
 		
 		}
