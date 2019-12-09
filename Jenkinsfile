@@ -11,8 +11,7 @@ pipeline {
 
 		stage ('Build') {
 			steps {
-			sh label: '', returnStdout: true, script: '''node server.js
-.exit'''
+				sh 'node server.js'
 			}
 		
 		}
