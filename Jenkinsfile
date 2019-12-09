@@ -12,5 +12,8 @@ pipeline {
 		stage ('Build') {
 			steps {
 				node server.js
+			}
+		}
 	}
+
 }
