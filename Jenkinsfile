@@ -5,12 +5,6 @@ pipeline {
 
 	stages {
 
-		stage('Install dependencies') {
-      		steps {
-        		sh 'npm install'
-      		}
-    	}
-
 		stage ('Test') {
 			steps {
 					sh 'node server.js'
