@@ -12,6 +12,7 @@ pipeline {
 		stage ('Build') {
 			steps {
 			sh 'node server.js'
+			sh 'exit server.js'
 			}
 		
 		}
