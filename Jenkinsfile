@@ -1,13 +1,11 @@
 pipeline {
 	agent any
 
-	tools {nodejs 'node'}
-
 	stages {
 
-		stage ('Test') {
+		stage ('Build') {
 			steps {
-					sh 'node server.js'
+					sh 'safari index.html'
 			}
 		}
 	}
