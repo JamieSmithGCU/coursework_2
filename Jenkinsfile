@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 
-	tools {nodejs 'node'}
+	tools {nodejs "node"}
 
 	stages {
 
@@ -13,7 +13,8 @@ pipeline {
 
 		stage ('Build') {
 			steps {
-			sh label: '', returnStdout: true, script: 'node server.js'
+			nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
+                sh 'node server.js'
 			}
 		}
 	}
