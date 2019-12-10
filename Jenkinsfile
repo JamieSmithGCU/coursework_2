@@ -8,6 +8,7 @@ pipeline {
 			}
 		
 		}
+
 		stage ('Test') {
 			environment {
         			scannerHome = tool 'SonarQube'
@@ -23,6 +24,6 @@ pipeline {
         			}
 			}
 		}
-	
+	}
 }
 
