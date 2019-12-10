@@ -8,6 +8,11 @@ pipeline {
 			}
 		
 		}
+		stage ('Test') {
+			steps {
+				build 'Static Analysis'
+				}
+			}
 	}
 
 }
