@@ -11,7 +11,7 @@ pipeline {
 
 		stage ('Test') {
 			steps {
-				build 'Static Analysis'
+				sh '${scannerHome}bin/sonar-scanner.bat'
 			}
 		}
 	}
