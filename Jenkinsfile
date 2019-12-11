@@ -11,7 +11,7 @@ pipeline {
 
 		stage ('Test') {
 			steps {
-				sh '${scannerHome}bin/sonar-scanner.bat'
+				sh '${scannerHome}bin/sonar-scanner'
 			}
 		}
 	}
