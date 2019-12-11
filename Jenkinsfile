@@ -11,7 +11,7 @@ pipeline {
 
 		stage ('SonarQube') {
 			steps {
-				build 'Static Analyis'
+				build 'Static Analysis'
 			}
 			
 		}	
