@@ -10,15 +10,10 @@ pipeline {
 		}
 
 		stage ('SonarQube') {
-			environment {
-				def scannerHome = tool 'SonarQube';
-			}
-
 			steps {
-    				withSonarQubeEnv('SonarQube') { 
-      					sh "${scannerHome}bin/sonar-scanner"
-				}
+				build 'Static Analyis'
 			}
+			
 		}	
 	}
 }
