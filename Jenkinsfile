@@ -16,7 +16,7 @@ pipeline {
 
 			steps {
 				withSonarQubeEnv('SonarQube') {
-            				sh '${JAVA_HOME}/bin/sonar-scanner'
+            				sh '/var/jenkins_home/workspace/bin/sonar-scanner'
 				}
 			}	
 		}
