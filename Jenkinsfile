@@ -16,7 +16,7 @@ pipeline {
 
 			steps {
         			withSonarQubeEnv('SonarQube') {
-            			sh './server.js clean sonarqube        			}
+            			sh './server.js clean sonarqube'        			}
 
 			timeout(time: 10, unit: 'MINUTES') {
             			waitForQualityGate abortPipeline: true
