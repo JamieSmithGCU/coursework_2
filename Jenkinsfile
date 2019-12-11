@@ -10,8 +10,9 @@ pipeline {
 		}
 
 		stage ('Test') {
-			build 'Static Analysis'
-			
+			steps {
+				build 'Static Analysis'
+			}
 		}
 	}
 }
