@@ -1,3 +1,5 @@
+def app
+
 pipeline {
 	agent { docker { image 'node:6.3' } }
 
@@ -19,8 +21,8 @@ pipeline {
 			script {
 				 {
 				docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-					push('${env.BUILD_NUMBER}')
-					push('latest')	
+					app.push('${env.BUILD_NUMBER}')
+					app.push('latest')	
 					}
 				}
 			}
