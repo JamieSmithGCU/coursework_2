@@ -16,9 +16,11 @@ pipeline {
 		}*/
 
 		stage ('Push Image') {
+			steps {
 			docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
 			push("${env.BUILD_NUMBER}")
-			push("latest")	
+			push("latest")
+				}	
 			}
 		}
 	}
