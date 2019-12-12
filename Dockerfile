@@ -2,7 +2,7 @@ FROM node:10
 
 WORKDIR /usr/src/app
 
-COPY server.js
+COPY . .
 
 EXPOSE 8080
 
