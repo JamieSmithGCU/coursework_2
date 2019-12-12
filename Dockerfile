@@ -1,7 +1,7 @@
-FROM nginx:alpine
+FROM node:10
 
-COPY . index.html
+COPY . .
 
-EXPOSE 8080
+EXPOSE 7000
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "server.js"]
