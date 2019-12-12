@@ -1,4 +1,5 @@
-FROM node:7-onbuild
+# Comment
+FROM node:latest
 
 COPY server.js
 
