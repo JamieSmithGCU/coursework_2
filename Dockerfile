@@ -1,7 +1,7 @@
-FROM node:10
+FROM nginx:alpine
 
-COPY . .
+COPY . index.html
 
 EXPOSE 8080
 
-CMD ["node", "server.js"]
+CMD ["safari", "server.js"]
