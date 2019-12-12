@@ -1,8 +1,10 @@
 # Comment
-FROM node:latest
+FROM node:10
+
+WORKDIR /usr/src/app
 
 COPY server.js
 
 EXPOSE 8080
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "server.js"]
