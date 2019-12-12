@@ -2,6 +2,6 @@ FROM node:10
 
 COPY . .
 
-EXPOSE 7000
+EXPOSE 80
 
 CMD ["node", "server.js"]
