@@ -9,11 +9,11 @@ pipeline {
 		
 		}
 
-		stage ('SonarQube') {
+		/*stage ('SonarQube') {
 			steps {
 				build 'Static Analysis'
 			}
-		}
+		}*/
 
 		stage ('Push Image') {
 			docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
