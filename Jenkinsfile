@@ -13,8 +13,14 @@ pipeline {
 			steps {
 				build 'Static Analysis'
 			}
-			
-		}	
+		}
+
+		stage ('Push Image') {
+			docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+			push("${env.BUILD_NUMBER}")
+			push("latest")	
+			}
+		}
 	}
 }
 
