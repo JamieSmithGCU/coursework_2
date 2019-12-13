@@ -10,7 +10,9 @@ pipeline {
 		}
 
 		stage('SonarQube') {
-   			build 'Static Analysis'
+			steps {
+   				build 'Static Analysis'
+			}
 		}
 
 		stage ('Push Image') {
