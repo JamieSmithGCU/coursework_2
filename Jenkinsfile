@@ -11,11 +11,11 @@ pipeline {
 		
 		}
 
-		/*stage ('SonarQube') {
+		stage ('SonarQube') {
 			steps {
 				build 'Static Analysis'
 			}
-		}*/
+		}
 
 		stage ('Push Image') {
 			steps {
