@@ -5,7 +5,7 @@ pipeline {
 	stages {
 		stage ('Build') {
 			steps {
-				app = docker.build('jamiesmithgcu/coursework2')
+				app = docker.build('jamiesmithgcu/coursework')
 			}
 		
 		}
