@@ -4,7 +4,7 @@ pipeline {
 	stages {
 		stage ('Build') {
 			steps {
-				sh 'node server.js'
+				app = docker.build('jamiesmithgcu/coursework2')
 			}
 		
 		}
@@ -19,8 +19,8 @@ pipeline {
 			steps {
 				script {
 					docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-						push('${env.BUILD_NUMBER}')
-						push('latest')	
+						app.push('${env.BUILD_NUMBER}')
+						app.push('latest')	
 					}
 				}
 			}
