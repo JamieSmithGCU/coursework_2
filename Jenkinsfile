@@ -1,11 +1,12 @@
+def app
 pipeline {
-	agent { docker { image 'node:6.3' } }
+	agent any
 
 	stages {
 		stage ('Build') {
-			
-				app = docker.build('jamiesmithgcu/coursework')
-			
+			steps {
+				sh 'node server.js'
+			}
 		
 		}
 
@@ -19,8 +20,8 @@ pipeline {
 			steps {
 				script {
 					docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-						app.push('${env.BUILD_NUMBER}')
-						app.push('latest')	
+						push('${env.BUILD_NUMBER}')
+						push('latest')	
 					}
 				}
 			}
