@@ -1,22 +1,26 @@
-node {
-	stage ('Build') {
-		steps {
-			app = docker.build("jamiesmithgcu/coursework")
-		}
-	}
+pipeline {
+	agent { docker { image 'node:6.3' } }
 
-	stage('Sonarqube') {
-		steps {
-			build 'Static Analysis'
+	stages {
+		stage ('Build') {
+			steps {
+				sh 'node server.js'
+			}
+		
 		}
-	}
+
+		stage('Sonarqube') {
+			steps {
+				build 'Static Analysis'
+			}
+		}
 
 		stage ('Push Image') {
 			steps {
 				script {
 					docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-						app.push('${env.BUILD_NUMBER}')
-						app.push('latest')	
+						push('${env.BUILD_NUMBER}')
+						push('latest')	
 					}
 				}
 			}
