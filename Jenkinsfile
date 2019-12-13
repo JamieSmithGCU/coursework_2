@@ -13,6 +13,7 @@ pipeline {
     			steps {
 				build 'Static Analysis'
 			}
+		}
 
 		stage ('Push Image') {
 			steps {
