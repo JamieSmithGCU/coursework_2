@@ -13,10 +13,11 @@ pipeline {
 			environment {
 				scannerHome = tool 'SonarQube';
 			}
-				
+				steps {
 				withSonarQubeEnv(credentialsId: 'dce1db44-40fe-4be9-a72e-b943ed0e2264') {
    					sh """cp sonar-server.properties ${scannerHome}conf/sonar-scanner.properties"""
         				sh """${scannerHome}bin/sonar-scanner -D sonar.login=admin -D sonar.password=admin"""
+					}
 				}
 			}
 
