@@ -21,7 +21,6 @@ pipeline {
 					sh '${scannerHome}bin/sonar-scanner'
 				}
 			}
-		}
 
 		stage ('Push Image') {
 			steps {
