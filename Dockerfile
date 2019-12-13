@@ -1,7 +1,5 @@
 FROM nginx:latest
 
-RUN apk update
-
 RUN apk add --no-cache nodejs
 
 COPY . .
