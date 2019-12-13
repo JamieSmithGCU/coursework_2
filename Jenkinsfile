@@ -1,20 +1,15 @@
-def app
-pipeline {
-	agent any
-
-	stages {
-		stage ('Build') {
-			steps {
-				app = docker.build("jamiesmithgcu/coursework")
-			}
-		
+node {
+	stage ('Build') {
+		steps {
+			app = docker.build("jamiesmithgcu/coursework")
 		}
+	}
 
-		stage('Sonarqube') {
-			steps {
-				build 'Static Analysis'
-			}
+	stage('Sonarqube') {
+		steps {
+			build 'Static Analysis'
 		}
+	}
 
 		stage ('Push Image') {
 			steps {
