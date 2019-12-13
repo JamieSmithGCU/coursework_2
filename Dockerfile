@@ -1,7 +1,7 @@
-FROM node:10
+FROM nginx:latest
 
 COPY . .
 
 EXPOSE 80
 
-CMD ["node", "server.js"]
+CMD ["nginx", "-g", "daemon;off", "server.js"]
