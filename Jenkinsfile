@@ -10,10 +10,16 @@ pipeline {
 		}
 
 		stage('SonarQube') {
+    			environment {
+        			scannerHome = tool 'SonarQube'
+    				}
+    			
 			steps {
-   				build 'Static Analysis'
+       			 withSonarQubeEnv('SonarQube') {
+            			sh "${scannerHome}/bin/sonar-scanner"
+        					}
+    				}
 			}
-		}
 
 		stage ('Push Image') {
 			steps {
